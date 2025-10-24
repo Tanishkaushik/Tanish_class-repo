@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Room Booking Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: white;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            border: 3px solid black;
+            padding: 30px;
+            background-color: white;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 24px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            text-align: right;
+        }
+        label {
+            display: inline-block;
+            width: 150px;
+            text-align: right;
+            margin-right: 10px;
+            font-weight: normal;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        input[type="number"],
+        select {
+            width: 200px;
+            padding: 5px;
+            border: 1px solid black;
+            background-color: white;
+        }
+        textarea {
+            width: 350px;
+            height: 80px;
+            padding: 5px;
+            border: 1px solid black;
+            resize: vertical;
+            background-color: white;
+        }
+        .textarea-group {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .button-group {
+            text-align: center;
+            margin-top: 20px;
+        }
+        button {
+            padding: 8px 20px;
+            margin: 0 5px;
+            border: 1px solid black;
+            background-color: white;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        button:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hotel Room Booking Form</h1>
+        
+        <form id="bookingForm">
+            <div class="form-group">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="checkin">Check-in Date:</label>
+                <input type="date" id="checkin" name="checkin" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="checkout">Check-out Date:</label>
+                <input type="date" id="checkout" name="checkout" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="roomType">Room Type:</label>
+                <select id="roomType" name="roomType" required>
+                    <option value="single">Single Room</option>
+                    <option value="double">Double Room</option>
+                    <option value="deluxe">Deluxe Room</option>
+                    <option value="suite">Suite</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="guests">Number of Guests:</label>
+                <input type="number" id="guests" name="guests" min="1" max="10" value="1" required>
+            </div>
+            
+            <div class="textarea-group">
+                <label for="specialRequests" style="display: block; text-align: center; margin-bottom: 10px;">Special Requests:</label>
+                <textarea id="specialRequests" name="specialRequests" placeholder="Enter any special requests or requirements..."></textarea>
+            </div>
+            
+            <div class="button-group">
+                <button type="submit">Book Now</button>
+                <button type="reset">Reset Form</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Booking request submitted successfully!');
+        });
+    </script>
+</body>
+</html>
