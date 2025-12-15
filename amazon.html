@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Clone</title>
+    <style>
+        /* --- CSS Reset & Basic Setup --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #e3e6e6; 
+        }
+
+        /* --- Header Section --- */
+        header {
+            background-color: #131921;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            height: 60px;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Using 'b' tag instead of 'span' for styling specific text */
+        .logo b {
+            color: #ff9900; 
+            font-weight: bold; /* Ensures it stays bold */
+        }
+
+        /* Search Bar */
+        .search-container {
+            flex-grow: 1; 
+            display: flex;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .search-container input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            outline: none;
+        }
+
+        .search-icon {
+            background-color: #febd69;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            font-size: 14px;
+        }
+
+        .nav-item {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .nav-item small {
+            font-size: 12px;
+            color: #cccccc;
+        }
+
+        .nav-item b {
+            font-weight: bold;
+        }
+
+        /* --- Sub-Navigation --- */
+        .sub-nav {
+            background-color: #232f3e;
+            padding: 10px 20px;
+            font-size: 14px;
+            display: flex;
+            gap: 15px;
+        }
+
+        /* Styling anchor tags to look like plain text menu items */
+        .sub-nav a {
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        .sub-nav a:hover {
+            border: 1px solid white; 
+            /* Amazon adds a border on hover */
+            margin: -1px; /* Prevents layout shift */
+        }
+
+        /* --- Main Content --- */
+        main {
+            max-width: 1500px;
+            margin: 0 auto;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background-image: linear-gradient(to bottom, rgba(0,0,0,0), #e3e6e6), url('https://via.placeholder.com/1500x600/b4a7d6/ffffff?text=Amazon+Hero+Banner');
+            background-size: cover;
+            height: 350px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end; 
+        }
+
+        .hero-msg {
+            background-color: #f5f6f6;
+            width: 95%;
+            padding: 15px;
+            text-align: center;
+            font-size: 14px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Product Grid */
+        .shop-section {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; 
+            gap: 20px;
+            padding: 20px;
+            margin-top: -250px; 
+            z-index: 10;
+        }
+
+        .product-card {
+            background-color: white;
+            width: 300px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 100;
+        }
+
+        .product-card h2 {
+            font-size: 20px;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .product-link {
+            color: #007185;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .product-link:hover {
+            text-decoration: underline;
+            color: #c7511f;
+        }
+
+        /* --- Footer --- */
+        footer {
+            margin-top: 20px;
+            background-color: #37475a;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .back-to-top {
+            background-color: #485769;
+            padding: 15px;
+            text-align: center;
+            font-size: 13px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">amazon<b>.clone</b></div>
+
+        <div class="search-container">
+            <input type="text" placeholder="Search Amazon">
+            <button class="search-icon">GO</button>
+        </div>
+
+        <div class="nav-links">
+            <div class="nav-item">
+                <small>Hello, User</small>
+                <b>Account & Lists</b>
+            </div>
+            <div class="nav-item">
+                <small>Returns</small>
+                <b>& Orders</b>
+            </div>
+            <div class="nav-item">
+                <b>Cart (0)</b>
+            </div>
+        </div>
+    </header>
+
+    <div class="sub-nav">
+        <a href="#">All</a>
+        <a href="#">Today's Deals</a>
+        <a href="#">Customer Service</a>
+        <a href="#">Registry</a>
+        <a href="#">Gift Cards</a>
+        <a href="#">Sell</a>
+    </div>
+
+    <main>
+        <div class="hero-section">
+            <div class="hero-msg">
+                You are on amazon.clone. You can also shop on Amazon India for millions of products with fast local delivery. <a href="#">Click here to go to amazon.in</a>
+            </div>
+        </div>
+
+        <div class="shop-section">
+            
+            <div class="product-card">
+                <h2>Gaming Headsets</h2>
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/260x200?text=Headset" alt="Product">
+                </div>
+                <a href="#" class="product-link">See more</a>
+            </div>
+
+            <div class="product-card">
+                <h2>Shop Laptops</h2>
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/260x200?text=Laptop" alt="Product">
+                </div>
+                <a href="#" class="product-link">See more</a>
+            </div>
+
+            <div class="product-card">
+                <h2>Health & Personal Care</h2>
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/260x200?text=Health" alt="Product">
+                </div>
+                <a href="#" class="product-link">See more</a>
+            </div>
+
+            <div class="product-card">
+                <h2>Toys & Games</h2>
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/260x200?text=Toys" alt="Product">
+                </div>
+                <a href="#" class="product-link">See more</a>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="back-to-top">Back to top</div>
+        <br>
+        <p>&copy; 2023 Amazon Clone. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
